@@ -1,6 +1,6 @@
-void keyPressedShortcuts() {
+void keyPressedShortcuts(); {
   //
-  music Shortuts();
+  music Shortcuts();
   quitButtons();
   //
 }//End keyPressedShortcuts
