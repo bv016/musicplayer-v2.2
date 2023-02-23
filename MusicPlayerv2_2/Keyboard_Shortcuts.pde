@@ -18,3 +18,13 @@ void musicShortcuts() {
 }//end musicShortcuts
 //
 //End Keyboard Shortcuts
+void quitButtons() {
+  //Quit button keyboard shortcuts
+  if (key == CODED && keyCode == ESC) {
+    quitButtonCode();
+  }
+  void quitButtonCode {
+  soundEffect0.loop(0);
+  delay(//amount of time sound fx plays)
+  exit();
+}
