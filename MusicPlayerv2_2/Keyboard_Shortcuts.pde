@@ -1,6 +1,6 @@
-void keyPressedShortcuts(); {
+void keyPressedShortcuts() {
   //
-  music Shortcuts();
+  musicShortcuts();
   quitButtons();
   //
 }//End keyPressedShortcuts
@@ -20,11 +20,13 @@ void musicShortcuts() {
 //End Keyboard Shortcuts
 void quitButtons() {
   //Quit button keyboard shortcuts
-  if (key == CODED && keyCode == ESC) {
+  if (key == CODED && keyCode == ESC ) {
     quitButtonCode();
   }
-  void quitButtonCode {
+}
+//
+void quitButtonCode() {
   soundEffect0.loop(0);
-  delay(//amount of time sound fx plays)
+  delay(1000); //amount of time sound fx plays)
   exit();
 }
