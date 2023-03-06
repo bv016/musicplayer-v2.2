@@ -27,8 +27,8 @@ void keyPressed() {
   //
   soundEffect0.play();
   soundEffect0.rewind();
-  delay();//name time when sound stops
-  println("KeyPressed:". soundEffect0.length() );
+  delay(1000);//name time when sound stops
+  println("KeyPressed:". soundEffect0.length(1000) );
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
   if (key =='q') exit();
