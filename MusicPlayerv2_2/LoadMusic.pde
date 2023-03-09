@@ -3,7 +3,7 @@ void loadMusic() {
   //
   // Concatention of Pathway + File Name //rename everything w/o spaces
   String musicPathway = "../music/"; //from sketch to music file
-  String soundEffectPathway = "../../music/"; // from sketch to sound effect folder
+  String soundEffectPathway = "../soundfx/"; // from sketch to sound effect folder
   String FullofYou = "FullofYou.mp3";
   String 想いきり = "想いきり.mp3";
   String DHalfMoon = "DHalfMoon.mp3";
