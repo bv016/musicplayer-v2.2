@@ -1,3 +1,5 @@
+//[ ] get soundEffectPathway to work and songs to get used
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -37,7 +39,7 @@ void keyPressed() {
 } //End keypPressed
 //
 void mousePressed() {
-  soundEffect1.rewind();
+  //soundEffect1.rewind();
   if ( activateWindow==false ) activateWindow = true;
 } //End mousePressed
 //

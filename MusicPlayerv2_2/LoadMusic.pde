@@ -1,7 +1,7 @@
 void loadMusic() {
   minim = new Minim(this);
   //
-  // Concatention of Pathway + File Name //rename everything w/o spaces
+  // Concatention of Pathway + File Name 
   String musicPathway = "../music/"; //from sketch to music file
   String soundEffectPathway = "../soundfx/"; // from sketch to sound effect folder
   String FullofYou = "FullofYou.mp3";
@@ -20,6 +20,6 @@ void loadMusic() {
   song5 = minim.loadFile( musicPathway + "../music/LastTrainAt25Oclock.mp3");
   song6 = minim.loadFile( musicPathway + "../music/Clouds.mp3");
   song7 = minim.loadFile( musicPathway + "../music/LikeYou.mp3");
-  soundEffect0 = minim.loadFile("../OGMinecraftDeath.m4a/");
-  soundEffect1 = minim.loadFile("../Vineboom.m4a/");
+  soundEffect0 = minim.loadFile("OGMinecraftDeath.m4a");
+  soundEffect1 = minim.loadFile("Vineboom.m4a");
 } //End loadMusic

@@ -15,6 +15,7 @@ void musicShortcuts() {
   if (key == '6') song5.loop(0);
   if (key == '7') song6.loop(0);
   if (key == '8') song7.loop(0);
+  
 }//end musicShortcuts
 //
 //End Keyboard Shortcuts
