@@ -28,6 +28,6 @@ void quitButtons() {
 //
 void quitButtonCode() {
   soundEffect0.loop(0);
-  delay(1000); //amount of time sound fx plays)
+  delay(1000); //amount of time sound fx plays;
   exit();
 }
