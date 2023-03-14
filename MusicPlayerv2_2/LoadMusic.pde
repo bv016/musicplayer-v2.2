@@ -20,6 +20,6 @@ void loadMusic() {
   song5 = minim.loadFile( musicPathway + "../music/LastTrainAt25Oclock.mp3");
   song6 = minim.loadFile( musicPathway + "../music/Clouds.mp3");
   song7 = minim.loadFile( musicPathway + "../music/LikeYou.mp3");
-  soundEffect0 = minim.loadFile("OGMinecraftDeath.m4a");
-  soundEffect1 = minim.loadFile("Vineboom.m4a");
+  soundEffect0 = minim.loadFile( soundEffectPathway + "../soundfx/OGMinecraftDeath.mp3");
+  soundEffect1 = minim.loadFile( soundEffectPathway + "../soundfx/Vineboom.mp3");
 } //End loadMusic
