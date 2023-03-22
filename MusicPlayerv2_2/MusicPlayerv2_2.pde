@@ -15,7 +15,7 @@ AudioPlayer [] songs = new AudioPlayer[numberOfSongs]; //playlist data structure
 //pre-array: AudioPlayer sfx[0], soundEffect1;
 int numberOfSFX = 2;
 AudioPlayer [] sfx = new AudioPlayer[numberOfSFX];
-int currentSong = int ( random( numberOfSongs-1 ) );
+int currentSong = int ( random( numberOfSongs-1 ) ); //shuffle || random same thign[gjdgfhjsdgf
 //
 Boolean activateWindow=false;
 //
