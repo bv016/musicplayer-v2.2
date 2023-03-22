@@ -7,25 +7,33 @@ void keyPressedShortcuts() {
 //
 void musicShortcuts() {
   //
-  if (key == '1') song0.loop(0);
-  if (key == '2') song1.loop(0);
-  if (key == '3') song2.loop(0);
-  if (key == '4') song3.loop(0);
-  if (key == '5') song4.loop(0);
-  if (key == '6') song5.loop(0);
-  if (key == '7') song6.loop(0);
-  if (key == '8') song7.loop(0);
+  if (key == '1') songs[0].loop(0);
+  if (key == '2') songs[1].loop(0);
+  if (key == '3') songs[2].loop(0);
+  if (key == '4') songs[3].loop(0);
+  if (key == '5') songs[4].loop(0);
+  if (key == '6') songs[5].loop(0);
+  if (key == '7') songs[6].loop(0);
+  if (key == '8') songs[7].loop(0);
   //
-  if (key == 'P' || key == 'p'); autoPlay(); //when song ends, there is no need to click on new one
-  if (key == 'G' || key == 'g'); playPause(); //pause and play
-  if (key == 'F' || key == 'f'); songBeginning(); //rewind to beginning
-  if (key == 'D' || key == 'd'); prevSong(); //play previous song
-  if (key == 'H' || key == 'h'); ff(); //fast forward in song
-  if (key == 'J' || key == 'j'); songSkip(); //skips to next song
-  if (key == 'K' || key == 'k'); loopSong(); //loops songs, and plaaylist in same button
-  if (key == 'D' || key == 'd'); shuffleO(); //letter o, not 0
-  if (key == 'S' || key == 's'); stopSong(); //stops song
-  
+  if (key == 'P' || key == 'p');
+  autoPlay(); //when song ends, there is no need to click on new one
+  if (key == 'G' || key == 'g');
+  playPause(); //pause and play
+  if (key == 'F' || key == 'f');
+  rewind(); //rewind to beginning
+  if (key == 'D' || key == 'd');
+  prevSong(); //play previous song
+  if (key == 'H' || key == 'h');
+  ff(); //fast forward in song
+  if (key == 'J' || key == 'j');
+  songSkip(); //skips to next song
+  if (key == 'K' || key == 'k');
+  loopSong(); //loops songs, and plaaylist in same button
+  if (key == 'D' || key == 'd');
+  shuffleO(); //letter o, not 0
+  if (key == 'S' || key == 's');
+  stopSong(); //stops song
 }//end musicShortcuts
 //
 //End Keyboard Shortcuts
@@ -37,25 +45,54 @@ void quitButtons() {
 }
 //
 void quitButtonCode() {
-  soundEffect0.loop(0);
+  sfx[0].loop(0);
   delay(1000); //amount of time sound fx plays;
   exit();
 }
 
-void autoPlay() {}
+void autoPlay() {
+}
 //
-void playPause() {}
+void playPause()
+{
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if ( songs[currentSong].position() >= songs[0].length()*9/10 ) {
+    //.rewind();
+    //.play();
+  } else {
+  }
+}
 //
-void songBeginning() {}
+void rewind() {
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
+}
 //
-void prevSong() {}
+void prevSong() {
+}
 //
-void ff() {}
+void ff() {
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+}//end ff | fast forward
 //
-void songSkip() {}
+void songSkip() {
+}
 //
-void loopSong() {}
+void loopSong()
+{
+  if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
+  }
+}
 //
-void shuffleO() {}
+void shuffleO() {
+}
 //
-void stopSong() {}
+void stopSong()
+{//stop is a fancy rewind
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+  } else {
+    songs[currentSong].rewind();
+  }
+} //End stopSong

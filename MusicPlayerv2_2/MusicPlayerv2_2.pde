@@ -9,16 +9,21 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
-AudioPlayer soundEffect0, soundEffect1;
+//pre-array: AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
+int numberOfSongs = 8;
+AudioPlayer [] songs = new AudioPlayer[numberOfSongs]; //playlist data structure
+//pre-array: AudioPlayer sfx[0], soundEffect1;
+int numberOfSFX = 2;
+AudioPlayer [] sfx = new AudioPlayer[numberOfSFX];
+int currentSong = int ( random( numberOfSongs-1 ) );
 //
 Boolean activateWindow=false;
 //
 void setup() {
-  size(300, 300);
+  size(800, 500);
   loadMusic();
   //song0.loop(0);
-  //soundEffect0.loop(0);
+  //sfx[0].loop(0);
 }// End setup
 //
 void draw() {
@@ -27,15 +32,15 @@ void draw() {
 //
 void keyPressed() {
   //
-  soundEffect0.play();
-  soundEffect0.rewind();
+  sfx[0].play();
+  sfx[0].rewind();
   delay(1000);//name time when sound stops
-  println("KeyPressed:", soundEffect0.length() );
+  println("KeyPressed:", sfx[0].length() );
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
   if (key =='q') exit();
-  if (key == CODED && key==ESC) exit(); soundEffect0.play();
-  println (soundEffect0.position(), soundEffect0.length() );
+  if (key == CODED && key==ESC) exit(); sfx[0].play();
+  println (sfx[0].position(), sfx[0].length() );
 } //End keypPressed
 //
 void mousePressed() {

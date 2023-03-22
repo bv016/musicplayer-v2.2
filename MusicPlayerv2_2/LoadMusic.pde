@@ -12,14 +12,14 @@ void loadMusic() {
   String LastTrainAt25Oclock = "LastTrainAt25Oclock.mp3";
   String Clouds = "Clouds.mp3";
   String LikeYou = "LikeYou.mp3";
-  song0 = minim.loadFile( musicPathway + "../music/FullofYou.mp3" );
-  song1 = minim.loadFile( musicPathway + "../music/想いきり.mp3");
-  song2 = minim.loadFile( musicPathway + "../music/DHalfMoon.mp3");
-  song3 = minim.loadFile( musicPathway + "../music/StealThisNight.mp3");
-  song4 = minim.loadFile( musicPathway + "../music/pathetic");
-  song5 = minim.loadFile( musicPathway + "../music/LastTrainAt25Oclock.mp3");
-  song6 = minim.loadFile( musicPathway + "../music/Clouds.mp3");
-  song7 = minim.loadFile( musicPathway + "../music/LikeYou.mp3");
-  soundEffect0 = minim.loadFile( soundEffectPathway + "../soundfx/OGMinecraftDeath.mp3");
-  soundEffect1 = minim.loadFile( soundEffectPathway + "../soundfx/Vineboom.mp3");
+  songs[0] = minim.loadFile( musicPathway + "../music/FullofYou.mp3" );
+  songs[1] = minim.loadFile( musicPathway + "../music/想いきり.mp3");
+  songs[2] = minim.loadFile( musicPathway + "../music/DHalfMoon.mp3");
+  songs[3] = minim.loadFile( musicPathway + "../music/StealThisNight.mp3");
+  songs[4] = minim.loadFile( musicPathway + "../music/pathetic");
+  songs[5] = minim.loadFile( musicPathway + "../music/LastTrainAt25Oclock.mp3");
+  songs[6] = minim.loadFile( musicPathway + "../music/Clouds.mp3");
+  songs[7] = minim.loadFile( musicPathway + "../music/LikeYou.mp3");
+  sfx[0] = minim.loadFile( soundEffectPathway + "../soundfx/OGMinecraftDeath.mp3");
+  sfx[1] = minim.loadFile( soundEffectPathway + "../soundfx/Vineboom.mp3");
 } //End loadMusic
