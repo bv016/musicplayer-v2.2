@@ -11,10 +11,10 @@ import ddf.minim.ugens.*;
 Minim minim;
 //pre-array: AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
 int numberOfSongs = 8;
-AudioPlayer [] songs = new AudioPlayer[numberOfSongs]; //playlist data structure
+AudioPlayer[] songs = new AudioPlayer[numberOfSongs]; //playlist data structure
 //pre-array: AudioPlayer sfx[0], soundEffect1;
 int numberOfSFX = 2;
-AudioPlayer [] sfx = new AudioPlayer[numberOfSFX];
+AudioPlayer[] sfx = new AudioPlayer[numberOfSFX];
 int currentSong = int ( random( numberOfSongs-1 ) ); //shuffle || random same thign[gjdgfhjsdgf
 //
 Boolean activateWindow=false;

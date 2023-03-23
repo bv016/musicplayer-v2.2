@@ -51,55 +51,73 @@ void quitButtonCode() {
 }
 
 void autoPlay() {
-}
-//
-void playPause()
-{
-  if ( songs[currentSong].isPlaying() ) {
-    songs[currentSong].pause();
-  } else if ( songs[currentSong].position() >= songs[0].length()*9/10 ) {
-    //.rewind();
-    //.play();
+  if ( autoPlayOn==false ) {
+    autoPlayOn=true;
   } else {
+    autoPlayOn=false;
+    songs[currentSong].pause();
   }
-}
-//
-void rewind() {
-  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
-}
-//
-void prevSong() {
-  //currentSong--;
+  //end autoplay
   //
-  void ff() {
-    if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-  }//end ff | fast forward
+  void autoPlayMusic() {
+    //Error: ArrayListOutOfBounds
+    if ( songs[currentSong].isPlaying()==false ) {
+      currentSong++;
+      songs[currentSong].play();
+    }
+  }//end autooPlayMusic
   //
-  void songSkip() {
-    //currentSong++;
-    if (songs[currentSong].isPlaying() ) {
-      //Current Song: .pause(), .rewind()
-      //Next song: current song++
-      // .play()
-    } else if () {
+  //
+  void playPause()
+  {
+    if ( songs[currentSong].isPlaying() ) {
+      songs[currentSong].pause();
+    } else if ( songs[currentSong].position() >= songs[0].length()*9/10 ) {
+      //.rewind();
+      //.play();
     } else {
     }
+  }
+  //
+  void rewind() {
+    if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
+  }
+  //
+  void prevSong() {
+    //currentSong--;
     //
-    void loopSong()
-    {
-      if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
-      }
-    }
+    void ff() {
+      if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+    }//end ff | fast forward
     //
-    void shuffleO() {
-    }
-    //
-    void stopSong()
-    {//stop is a fancy rewind
-      if ( songs[currentSong].isPlaying() ) {
-        songs[currentSong].pause();
-        songs[currentSong].rewind();
+    void songSkip() {
+      //currentSong++;
+      if (songs[currentSong].isPlaying() ) {
+        //Current Song: .pause(), .rewind()
+        //Next song: current song++
+        // .play()
+      } else if (currentSong >= songs.length-1) ) {
+        currentSong = 0;
       } else {
         songs[currentSong].rewind();
+        currentSong++;
       }
-    } //End stopSong
+      //
+      void loopSong()
+      {
+        if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
+        }
+      }
+      //
+      void shuffleO() {
+      }
+      //
+      void stopSong()
+      {//stop is a fancy rewind
+        if ( songs[currentSong].isPlaying() ) {
+          songs[currentSong].pause();
+          songs[currentSong].rewind();
+        } else {
+          songs[currentSong].rewind();
+        }
+      } //End stopSong
