@@ -29,7 +29,7 @@ void musicShortcuts() {
   if (key == 'J' || key == 'j');
   songSkip(); //skips to next song
   if (key == 'K' || key == 'k');
-  loopSong(); //loops songs, and plaaylist in same button
+  loopSong(); //loops songs, and playlist in same button
   if (key == 'D' || key == 'd');
   shuffleO(); //letter o, not 0
   if (key == 'S' || key == 's');
@@ -69,30 +69,37 @@ void rewind() {
 }
 //
 void prevSong() {
-}
-//
-void ff() {
-  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-}//end ff | fast forward
-//
-void songSkip() {
-}
-//
-void loopSong()
-{
-  if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
-  }
-}
-//
-void shuffleO() {
-}
-//
-void stopSong()
-{//stop is a fancy rewind
-  if ( songs[currentSong].isPlaying() ) {
-    songs[currentSong].pause();
-    songs[currentSong].rewind();
-  } else {
-    songs[currentSong].rewind();
-  }
-} //End stopSong
+  //currentSong--;
+  //
+  void ff() {
+    if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+  }//end ff | fast forward
+  //
+  void songSkip() {
+    //currentSong++;
+    if (songs[currentSong].isPlaying() ) {
+      //Current Song: .pause(), .rewind()
+      //Next song: current song++
+      // .play()
+    } else if () {
+    } else {
+    }
+    //
+    void loopSong()
+    {
+      if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
+      }
+    }
+    //
+    void shuffleO() {
+    }
+    //
+    void stopSong()
+    {//stop is a fancy rewind
+      if ( songs[currentSong].isPlaying() ) {
+        songs[currentSong].pause();
+        songs[currentSong].rewind();
+      } else {
+        songs[currentSong].rewind();
+      }
+    } //End stopSong
