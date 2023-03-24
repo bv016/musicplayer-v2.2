@@ -17,7 +17,7 @@ int numberOfSFX = 2;
 AudioPlayer[] sfx = new AudioPlayer[numberOfSFX];
 int currentSong = int ( random( numberOfSongs-1 ) ); //shuffle || random same thign[gjdgfhjsdgf
 //
-Boolean activateWindow=false;
+Boolean activateWindow=false, autoPlayOn=false;
 //
 void setup() {
   size(800, 500);
@@ -28,6 +28,9 @@ void setup() {
 //
 void draw() {
   if ( activateWindow == true) background(0);
+  println(autoPlayOn, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length());
+  //
+  if ( autoPlayOn==true ) autoPlayMusic();
 } //End Draw
 //
 void keyPressed() {
@@ -39,7 +42,8 @@ void keyPressed() {
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
   if (key =='q') exit();
-  if (key == CODED && key==ESC) exit(); sfx[0].play();
+  if (key == CODED && key==ESC) exit();
+  sfx[0].play();
   println (sfx[0].position(), sfx[0].length() );
 } //End keypPressed
 //

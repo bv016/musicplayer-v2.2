@@ -66,7 +66,7 @@ void autoPlayMusic() {
     currentSong++;
     songs[currentSong].play();
   }
-}//end autooPlayMusic
+}//end autoPlayMusic
 //
 //
 void playPause()
