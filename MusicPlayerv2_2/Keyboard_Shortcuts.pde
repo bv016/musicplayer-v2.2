@@ -107,7 +107,7 @@ void songSkip() {
   //
   void loopSong()
   {
-    if ( songs[currentSong].position() >= songs[currentSong].length()*153/157 ) {
+    if ( songs[currentSong].position() >= songs[currentSong].length()*95/100 ) {
     }
   }
   //
