@@ -4,10 +4,11 @@
 float buttonReferentMeasure;
 float buttonSide, spaceX, spaceY, spaceWidth, spaceHeight;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
-float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, muteX, muteY, loopIX, loopIY;
+float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY;
 float shuffleX, shuffleY;
+float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A;
 //
 void setup() {
   //Display
@@ -27,11 +28,11 @@ void setup() {
   //
   pauseX1 = centerX - buttonReferentMeasure*1/2;
   pauseY1 = centerY - buttonReferentMeasure*1/2;
-  pauseWidth = buttonReferentMeasure * 2/6;
+  pauseWidth = buttonReferentMeasure * 19683/59049;
   pauseX2 = pauseX1 + 2*pauseWidth;
   pauseY2 = pauseY1;
-  playX = pauseX1;
-  playY = pauseY1;
+  playX1 = pauseX1;
+  playY1 = pauseY1;
   stopX = pauseX1;
   stopY = height * 28/32;
   pauseX3 = pauseX1 + 3*pauseWidth;
@@ -60,18 +61,17 @@ void setup() {
   prevY = pauseY1;
   //
   buttonPositionColumn = 3;
-  loop1X = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
-  loop1Y = pauseY3;
+  loop1X = loopIX;
+  loop1Y = loopIY;
   //
   buttonPositionRow = 2;
   loopPlaylistX = pauseX1;
   loopPlaylistY = pauseY1 + ( buttonPositionRow*buttonReferentMeasure );
   //
   buttonPositionRow = 3;
-  stopX = pauseX1 + 3*pauseWidth;
-  stopY = pauseY3;
+  stopX = pauseX1;
+  stopY = height * 112.5/128;
   //
-  
 } //End setup
 //
 void draw() {
@@ -105,7 +105,7 @@ void draw() {
   //
   //Fast Forward in the Song  //To the right of center button
   rect( ffX, ffY, buttonSide, buttonSide ); //Layout
-  //triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
+  triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
   //triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
   //
   //Rewind in the Song  //to the left of center button
@@ -118,13 +118,13 @@ void draw() {
   //triangle( nextX1, nextY1, nextX2, nextY2, nextX3, nextY3 );
   //rect( nextX, nextY, nextWidth, buttonSide );
   //
-  //Previous Button  //to the left of rewind 
+  //Previous Button  //to the left of rewind
   rect( prevX, prevY, buttonSide, buttonSide ); //Layout
   //triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   //rect( prevX, prevY, prevWidth, buttonSide );
   //
-  //Loop the Song Once //far right b7 (remember that mute is useless and was purged), merge with infinite loop
-  //rect( loop1X, loop1Y, buttonSide, buttonSide ); //Layout
+  //Loop the Song Once, merged with normal loop
+  rect( loop1X, loop1Y, buttonSide, buttonSide ); //Layout
   //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
   //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
   //triangle( loop1X1, loop1Y1, loop1X2, loop1Y2, loop1X3, loop1Y3 );
@@ -135,7 +135,7 @@ void draw() {
   //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
   //triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
   //
-  //Shuffle //place on offset r2 on the left from top left
+  //Shuffle //left r2
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
   //2-D Shapes
   //
