@@ -28,7 +28,7 @@ void setup() {
 //
 void draw() {
   if ( activateWindow == true) background(0);
-  println(autoPlayOn, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length());
+  println(autoPlayOn, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length() );
   //
   if ( autoPlayOn==true ) autoPlayMusic();
 } //End Draw

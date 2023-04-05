@@ -73,7 +73,7 @@ void playPause()
 {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
-  } else if ( songs[currentSong].position() >= songs[0].length()*9/10 ) {
+  } else if ( songs[currentSong].position() >= songs[0].length()*90/100 ) {
     //.rewind();
     //.play();
   } else {
@@ -107,7 +107,7 @@ void songSkip() {
   //
   void loopSong()
   {
-    if ( songs[currentSong].position() >= songs[currentSong].length()*95/100 ) {
+    if ( songs[currentSong].position() >= songs[currentSong].length()*90/100 ) {
     }
   }
   //
