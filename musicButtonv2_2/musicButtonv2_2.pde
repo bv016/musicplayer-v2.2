@@ -51,13 +51,6 @@ void setup() {
   ffX = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
   ffY = pauseY1;
   //
-  ffX1A = pauseX1;
-  ffY1A = pauseY1;
-  ffX2A = pauseX2;
-  ffY2A = pauseX1;
-  ffX3A = pauseX2;
-  ffY3A = pauseY3-0.5;
-  //
   rrX = pauseX1 - ( buttonPositionColumn*buttonReferentMeasure );
   rrY = pauseY1;
   //
@@ -110,6 +103,11 @@ void draw() {
   //Play Button //center at 25/32
   rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
+  //
+  playX1 = pauseX1;
+  playY1 = pauseY1;
+  playX2 = pauseX2;
+  playY2 = pauseY2;
   //
   //Fast Forward in the Song  //To the right of center button
   rect( ffX, ffY, buttonSide, buttonSide ); //Layout
