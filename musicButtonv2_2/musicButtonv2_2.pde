@@ -9,6 +9,7 @@ float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY;
 float shuffleX, shuffleY;
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A;
+float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;
 //
 void setup() {
   //Display
@@ -35,7 +36,7 @@ void setup() {
   playY1 = pauseY1;
   stopX = pauseX1;
   stopY = height * 28/32;
-  pauseX3 = pauseX1 + 3*pauseWidth;
+  pauseX3 = pauseX1*6*pauseWidth;
   pauseY3 = pauseY1;
   //
   buttonPositionRow = 1;
@@ -49,6 +50,13 @@ void setup() {
   buttonPositionColumn = 1;
   ffX = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
   ffY = pauseY1;
+  //
+  ffX1A = pauseX1;
+  ffY1A = pauseY1;
+  ffX2A = pauseX2;
+  ffY2A = pauseX1;
+  ffX3A = pauseX2;
+  ffY3A = pauseY3-0.5;
   //
   rrX = pauseX1 - ( buttonPositionColumn*buttonReferentMeasure );
   rrY = pauseY1;
@@ -106,7 +114,7 @@ void draw() {
   //Fast Forward in the Song  //To the right of center button
   rect( ffX, ffY, buttonSide, buttonSide ); //Layout
   triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
-  //triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
+  triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
   //
   //Rewind in the Song  //to the left of center button
   rect( rrX, rrY, buttonSide, buttonSide ); //Layout
