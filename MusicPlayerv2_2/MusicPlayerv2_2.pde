@@ -1,4 +1,5 @@
 //[X] get soundEffectPathway to work and songs to get used
+//[ ] fix null value 8[] when 1 or 8 are used
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;
