@@ -21,10 +21,11 @@ BGImageWidth = appWidth-1;
 BGImageHeight = appHeight-1;
 String upFolder = "..";
 String openFolder = "/";
-String folder1 = "usedImages";
+String folder1 = "Background Image";
 String folder2 = "Landscape and Square Images";
-pathway = upFolder + openFolder + upFolder + openFolder + folder1 + openFolder + folder2 + openFolder;
-fileName = "timmyburger.jpg";
+String folder3 = "usedImages";
+pathway = folder3 + openFolder;
+fileName = "omoikiri.jpg";
 pic = loadImage( pathway + fileName );
 int picWidth = 2168; //original dimensions
 int picHeight= 3840;
@@ -73,6 +74,6 @@ if (nightmode==true) tint(20, 19, 20);
 //image ( pic, BGImageX, BGImage, BGImageWidth, BGImageHeight );
 //aspect ratio image
 println( picWidthAdjusted, picHeightAdjusted );//shows human error & zero values | view human error on variables
-image( pic, BGImageX, BGImageY, picXAdjusted, picYAdjusted, picHeightAdjusted );
+image( pic, picHeightAdjusted, picWidthAdjusted, picXAdjusted, picYAdjusted );
 //
 //End Main Program
