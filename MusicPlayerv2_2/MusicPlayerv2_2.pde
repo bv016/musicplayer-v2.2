@@ -1,5 +1,7 @@
 //[X] get soundEffectPathway to work and songs to get used
 //[ ] fix null value 8[] when 1 or 8 are used
+//[ ] stop amalgamation of songs from forming
+//[ ] stop the minim error 
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;

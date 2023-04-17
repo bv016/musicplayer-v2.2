@@ -74,8 +74,8 @@ void playPause()
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
   } else if ( songs[currentSong].position() >= songs[0].length()*90/100 ) {
-    //.rewind();
-    //.play();
+    songs[currentSong].rewind();
+    songs[currentSong].play();
   } else {
   }
 }
