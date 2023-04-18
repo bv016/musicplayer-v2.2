@@ -32,8 +32,8 @@ void setup() {
   pauseWidth = buttonReferentMeasure * 19683/59049;
   pauseX2 = pauseX1 + 2*pauseWidth;
   pauseY2 = pauseY1;
-  playX1 = pauseX1;
-  playY1 = pauseY1;
+  playX = pauseX1;
+  playY = pauseY1;
   stopX = pauseX1;
   stopY = height * 28/32;
   pauseX3 = pauseX1*6*pauseWidth;
@@ -88,31 +88,33 @@ void draw() {
   //println("/t Confirming Button Position Couter:", buttonPosition);
   //
   //Button Space
-  rect( spaceX, spaceY, spaceWidth, buttonSide );
+  rect( spaceX, spaceY, spaceWidth, buttonSide ); 
   rect( spaceX, spaceY, spaceHeight, buttonSide );
   //
   //Stop Button //far right, find way to move middle bottom
   rect( stopX, stopY, buttonSide, buttonSide ); //layout?
   rect( stopX, stopY, buttonSide, buttonSide ); //square
   //
-  //Pause Button //center at 25/32
+  //Pause Button //center at 25/32 [only correct button]
   rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
   rect( pauseX1, pauseY1, pauseWidth, buttonSide );
   rect( pauseX2, pauseY2, pauseWidth, buttonSide );
   //
-  //Play Button //center at 25/32
+  //Play Button //center at 25/32 [is the triangle bugging my screen and ugly top left creature]
   rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
   //
   playX1 = pauseX1;
   playY1 = pauseY1;
-  playX2 = pauseX2;
-  playY2 = pauseY2;
+  playX2 = ffX;
+  playY2 = ffY*1/2;
+  playX3 = pauseX3;
+  playY3 = pauseY3;
   //
   //Fast Forward in the Song  //To the right of center button
   rect( ffX, ffY, buttonSide, buttonSide ); //Layout
-  triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
-  triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
+  //triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
+  //triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
   //
   //Rewind in the Song  //to the left of center button
   rect( rrX, rrY, buttonSide, buttonSide ); //Layout
