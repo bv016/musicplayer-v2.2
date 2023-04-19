@@ -1,3 +1,4 @@
+
 //[ ] merge loop buttons into double function
 //[X] move shuffle to the left of loop
 
@@ -6,7 +7,7 @@ float buttonSide, spaceX, spaceY, spaceWidth, spaceHeight;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
 float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
-float loopPlaylistX, loopPlaylistY;
+float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
 float shuffleX, shuffleY;
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A;
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;
@@ -96,20 +97,20 @@ void draw() {
   rect( stopX, stopY, buttonSide, buttonSide ); //square
   //
   //Pause Button //center at 25/32 [only correct button]
-  rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
+  //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
   rect( pauseX1, pauseY1, pauseWidth, buttonSide );
   rect( pauseX2, pauseY2, pauseWidth, buttonSide );
   //
   //Play Button //center at 25/32 [is the triangle bugging my screen and ugly top left creature]
-  rect( playX, playY, buttonSide, buttonSide ); //Layout
+  //rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
   //
   playX1 = pauseX1;
   playY1 = pauseY1;
   playX2 = ffX;
-  playY2 = ffY*1/2;
-  playX3 = pauseX3;
-  playY3 = pauseY3;
+  playY2 = pauseY3 + buttonReferentMeasure*1/2;
+  playX3 = pauseX1;
+  playY3 = shuffleY;
   //
   //Fast Forward in the Song  //To the right of center button
   rect( ffX, ffY, buttonSide, buttonSide ); //Layout
@@ -139,7 +140,7 @@ void draw() {
   //
   //Loop the Song Infinitely //offest middle right
   rect( loopIX, loopIY, buttonSide, buttonSide ); //Layout
-  //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
   //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
   //triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
   //
