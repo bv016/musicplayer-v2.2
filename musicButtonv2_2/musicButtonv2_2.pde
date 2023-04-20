@@ -1,6 +1,6 @@
-
 //[ ] merge loop buttons into double function
 //[X] move shuffle to the left of loop
+//[ ] add prejudice to shapes
 
 float buttonReferentMeasure;
 float buttonSide, spaceX, spaceY, spaceWidth, spaceHeight;
@@ -9,8 +9,10 @@ float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
 float shuffleX, shuffleY;
-float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A;
-float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;
+float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A; //ff ttriangle1
+float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
+float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES
+float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextWidth; //shapes for next 
 //
 void setup() {
   //Display
@@ -89,7 +91,7 @@ void draw() {
   //println("/t Confirming Button Position Couter:", buttonPosition);
   //
   //Button Space
-  rect( spaceX, spaceY, spaceWidth, buttonSide ); 
+  rect( spaceX, spaceY, spaceWidth, buttonSide );
   rect( spaceX, spaceY, spaceHeight, buttonSide );
   //
   //Stop Button //far right, find way to move middle bottom
@@ -104,28 +106,54 @@ void draw() {
   //Play Button //center at 25/32 [is the triangle bugging my screen and ugly top left creature]
   //rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
-  //
-  playX1 = pauseX1;
-  playY1 = pauseY1;
-  playX2 = ffX;
-  playY2 = pauseY3 + buttonReferentMeasure*1/2;
-  playX3 = pauseX1;
-  playY3 = shuffleY;
-  //
+    playX1 = pauseX1;
+    playY1 = pauseY1;
+    playX2 = ffX;
+    playY2 = pauseY3 + buttonReferentMeasure*1/2;
+    playX3 = pauseX1;
+    playY3 = shuffleY;
+    //
+    //
   //Fast Forward in the Song  //To the right of center button
-  rect( ffX, ffY, buttonSide, buttonSide ); //Layout
-  //triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
-  //triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
-  //
-  //Rewind in the Song  //to the left of center button
-  rect( rrX, rrY, buttonSide, buttonSide ); //Layout
-  //triangle( rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A );
-  //triangle( rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B );
-  //
-  //Next Button, skip file  //to the right of ff within song
-  rect( nextX, nextY, buttonSide, buttonSide ); //Layout
-  //triangle( nextX1, nextY1, nextX2, nextY2, nextX3, nextY3 );
-  //rect( nextX, nextY, nextWidth, buttonSide );
+  //rect( ffX, ffY, buttonSide, buttonSide ); //Layout
+  triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
+  triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
+    ffX1A = ffX;
+    ffY1A = pauseY1;
+    ffX2A = ffX + buttonReferentMeasure*1/2;
+    ffY2A = pauseY3 + buttonReferentMeasure*1/2;
+    ffX3A = ffX;
+    ffY3A = ffY + buttonReferentMeasure;
+    //
+    ffX1B = ffX + buttonReferentMeasure*1/2;
+    ffY1B = pauseY1;
+    ffX2B = ffX + buttonReferentMeasure;
+    ffY2B = pauseY3 + buttonReferentMeasure*1/2;
+    ffX3B = ffX1B;
+    ffY3B = ffY + buttonReferentMeasure;
+    //
+    //
+//Rewind in the Song  //to the left of center button
+rect( rrX, rrY, buttonSide, buttonSide ); //Layout
+//triangle( rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A );
+//triangle( rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B );
+    /* rrX1A = rrX;
+    rrY1A = pauseY1;
+    rrX2A = rrX + buttonReferentMeasure*19683/59049;
+    rrY2A = pauseY3 + buttonReferentMeasure*1/2;
+    rrX3A = rrX;
+    rrY3A = rrX+buttonReferentMeasure;
+    */
+//Next Button, skip file  //to the right of ff within song
+//rect( nextX, nextY, buttonSide, buttonSide ); //Layout
+triangle( nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A );
+rect( nextX, nextY, nextWidth, buttonSide );
+    nextX1A = nextX;
+    nextY1A = pauseY1;
+    nextX2A = nextX + buttonReferentMeasure*2/3;
+    nextY2A = pauseY3 + buttonReferentMeasure*1/2;
+    nextX3A = nextX;
+    nextY3A = nextY + buttonReferentMeasure;  
   //
   //Previous Button  //to the left of rewind
   rect( prevX, prevY, buttonSide, buttonSide ); //Layout
