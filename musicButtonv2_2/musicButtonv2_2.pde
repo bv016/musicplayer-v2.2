@@ -8,11 +8,11 @@ float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
 float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
-float shuffleX, shuffleY;
+float shuffleX, shuffleY;//shuffle box
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A; //ff ttriangle1
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
 float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES
-float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextWidth; //shapes for next 
+float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next 
 //
 void setup() {
   //Display
@@ -147,13 +147,15 @@ rect( rrX, rrY, buttonSide, buttonSide ); //Layout
 //Next Button, skip file  //to the right of ff within song
 //rect( nextX, nextY, buttonSide, buttonSide ); //Layout
 triangle( nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A );
-rect( nextX, nextY, nextWidth, buttonSide );
+rect( nextXA, nextYA, nextWidth, buttonSide );
     nextX1A = nextX;
     nextY1A = pauseY1;
     nextX2A = nextX + buttonReferentMeasure*2/3;
     nextY2A = pauseY3 + buttonReferentMeasure*1/2;
     nextX3A = nextX;
-    nextY3A = nextY + buttonReferentMeasure;  
+    nextY3A = nextY + buttonReferentMeasure; 
+    nextXA = nextX2A;
+    nextYA = pauseY1;
   //
   //Previous Button  //to the left of rewind
   rect( prevX, prevY, buttonSide, buttonSide ); //Layout
