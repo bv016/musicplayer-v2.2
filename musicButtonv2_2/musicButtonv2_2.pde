@@ -183,17 +183,17 @@ void draw() {
   prevY3 = prevY + buttonReferentMeasure;
   prevWidth = buttonReferentMeasure*1/3;
   //
-  //Loop the Song Once, merged with normal loop
-  rect( loop1X, loop1Y, buttonSide, buttonSide ); //Layout
-  //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
-  //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
-  //triangle( loop1X1, loop1Y1, loop1X2, loop1Y2, loop1X3, loop1Y3 );
-  //
-  //Loop the Song Infinitely //offest middle right
+  //Loop songs | offest middle right
   rect( loopIX, loopIY, buttonSide, buttonSide ); //Layout
   ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
   //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
   //triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
+  //
+  loopIX = loopIX + buttonReferentMeasure*1/2;
+  loopIY = loopIY + buttonReferentMeasure*1/2;
+  loopIWidthDiameter = buttonReferentMeasure;
+  loopIHeightDiameter = buttonReferentMeasure;
+  //
   //
   //Shuffle //left r2
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
