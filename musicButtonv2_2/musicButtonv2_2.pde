@@ -15,6 +15,7 @@ float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
 float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES1
 float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;//rewindtriangles2
 float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next
+float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3; //prev song riangle
 //
 void setup() {
   //Display
@@ -139,7 +140,7 @@ void draw() {
   //rect( rrX, rrY, buttonSide, buttonSide ); //Layout
   triangle( rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A );
   triangle( rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B );
-  rrX1A = rrX + buttonReferentMeasure
+  rrX1A = rrX + buttonReferentMeasure;
   rrY1A = pauseY1;
   rrX2A = rrX + buttonReferentMeasure*1/2;
   rrY2A = pauseY3 + buttonReferentMeasure*1/2;
@@ -168,9 +169,15 @@ void draw() {
   nextYA = pauseY1;
   //
   //Previous Button || to the left of rewind
-  rect( prevX, prevY, buttonSide, buttonSide ); //Layout
-  //triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
+  //rect( prevX, prevY, buttonSide, buttonSide ); //Layout
+  triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   //rect( prevX, prevY, prevWidth, buttonSide );
+  prevX1 = prevX + buttonReferentMeasure;
+  prevY1 = pauseY1;
+  prevX2 = prevX + buttonReferentMeasure*1/3;
+  prevY2 = pauseY3 + buttonReferentMeasure*1/2;
+  prevX3 = prevX1;
+  prevY3 = prevY + buttonReferentMeasure;
   //
   //Loop the Song Once, merged with normal loop
   rect( loop1X, loop1Y, buttonSide, buttonSide ); //Layout
