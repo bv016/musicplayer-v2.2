@@ -2,6 +2,7 @@
 //[X] move shuffle to the left of loop
 //[ ] add prejudice to shapes
 //[ ] add button space
+//reminder to invert the left sides
 
 float buttonReferentMeasure;
 float buttonSide, spaceX, spaceY, spaceWidth, spaceHeight;
@@ -9,7 +10,7 @@ float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
 float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
-float shuffleX, shuffleY;//shuffle box
+float shuffleX, shuffleY, shuffleX1, shuffleX2;//shuffle box
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A; //ff ttriangle1
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
 float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES1
