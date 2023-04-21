@@ -96,16 +96,16 @@ void draw() {
   rect( spaceX, spaceY, spaceWidth, buttonSide );
   rect( spaceX, spaceY, spaceHeight, buttonSide );
   //
-  //Stop Button //far right, find way to move middle bottom
+  //Stop Button || far right, find way to move middle bottom
   rect( stopX, stopY, buttonSide, buttonSide ); //layout?
   rect( stopX, stopY, buttonSide, buttonSide ); //square
   //
-  //Pause Button //center at 25/32 [only correct button]
+  //Pause Button || center at 25/32 [only correct button]
   //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
   rect( pauseX1, pauseY1, pauseWidth, buttonSide );
   rect( pauseX2, pauseY2, pauseWidth, buttonSide );
   //
-  //Play Button //center at 25/32 [is the triangle bugging my screen and ugly top left creature]
+  //Play Button || center at 25/32 [is the triangle bugging my screen and ugly top left creature]
   //rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
   playX1 = pauseX1;
@@ -116,7 +116,7 @@ void draw() {
   playY3 = shuffleY;
   //
   //
-  //Fast Forward in the Song  //To the right of center button
+  //Fast Forward in the Song || To the right of center button
   //rect( ffX, ffY, buttonSide, buttonSide ); //Layout
   triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
   triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
@@ -135,11 +135,11 @@ void draw() {
   ffY3B = ffY + buttonReferentMeasure;
   //
   //
-  //Rewind in the Song  //to the left of center button
+  //Rewind in the Song || to the left of center button
   //rect( rrX, rrY, buttonSide, buttonSide ); //Layout
   triangle( rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A );
   triangle( rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B );
-  rrX1A = rrX + buttonReferentMeasure;
+  rrX1A = rrX + buttonReferentMeasure
   rrY1A = pauseY1;
   rrX2A = rrX + buttonReferentMeasure*1/2;
   rrY2A = pauseY3 + buttonReferentMeasure*1/2;
@@ -154,7 +154,7 @@ void draw() {
   rrY3B = ffY3A;
   //
   //
-  //Next Button, skip file  //to the right of ff within song
+  //Next Button, skip file || to the right of ff within song
   //rect( nextX, nextY, buttonSide, buttonSide ); //Layout
   triangle( nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A );
   rect( nextXA, nextYA, nextWidth, buttonSide );
@@ -167,7 +167,7 @@ void draw() {
   nextXA = nextX2A;
   nextYA = pauseY1;
   //
-  //Previous Button  //to the left of rewind
+  //Previous Button || to the left of rewind
   rect( prevX, prevY, buttonSide, buttonSide ); //Layout
   //triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   //rect( prevX, prevY, prevWidth, buttonSide );
