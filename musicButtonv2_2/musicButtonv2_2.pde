@@ -1,4 +1,4 @@
-//[ ] merge loop buttons into double function
+//[ ] merge loop buttons into double function | keep one loop, but add array or counting fuction to determine what to do
 //[X] move shuffle to the left of loop
 //[ ] add prejudice to shapes
 //[ ] add button space
@@ -16,7 +16,8 @@ float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
 float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES1
 float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;//rewindtriangles2
 float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next
-float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3; //prev song riangle
+float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth; //prev song riangle
+float csA, csB, ceA, ceB, crvXA, crvYA, crvXB, crvYB;
 //
 void setup() {
   //Display
@@ -168,17 +169,19 @@ void draw() {
   nextY3A = nextY + buttonReferentMeasure;
   nextXA = nextX2A;
   nextYA = pauseY1;
+  nextWidth = buttonReferentMeasure*1/3;
   //
   //Previous Button || to the left of rewind
   //rect( prevX, prevY, buttonSide, buttonSide ); //Layout
   triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
-  //rect( prevX, prevY, prevWidth, buttonSide );
+  rect( prevX, prevY, prevWidth, buttonSide );
   prevX1 = prevX + buttonReferentMeasure;
   prevY1 = pauseY1;
   prevX2 = prevX + buttonReferentMeasure*1/3;
   prevY2 = pauseY3 + buttonReferentMeasure*1/2;
   prevX3 = prevX1;
   prevY3 = prevY + buttonReferentMeasure;
+  prevWidth = buttonReferentMeasure*1/3;
   //
   //Loop the Song Once, merged with normal loop
   rect( loop1X, loop1Y, buttonSide, buttonSide ); //Layout
@@ -194,6 +197,14 @@ void draw() {
   //
   //Shuffle //left r2
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
+/*  curve( crvXA, crvYA, buttonSide);
+  curve();
+  //
+    crvXA = shuffleX + buttonReferentMeasure*1/16;
+    crvYA;
+    crvXB;
+    crvYB;
+  *///
   //2-D Shapes
   //
 } //End draw
