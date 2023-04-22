@@ -2,6 +2,7 @@
 //[X] move shuffle to the left of loop
 //[ ] add prejudice to shapes
 //[ ] add button space
+//[ ] 
 //reminder to invert the left sides
 
 float buttonReferentMeasure;
@@ -10,6 +11,7 @@ float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
 float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
+float loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3;
 float shuffleX, shuffleY, shuffleX1, shuffleX2;//shuffle box
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A; //ff ttriangle1
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
@@ -18,6 +20,7 @@ float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;//rewindtriangles2
 float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next
 float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth; //prev song riangle
 float csA, csB, ceA, ceB, crvXA, crvYA, crvXB, crvYB;
+//float ;
 //
 void setup() {
   //Display
@@ -185,14 +188,20 @@ void draw() {
   //
   //Loop songs | offest middle right
   rect( loopIX, loopIY, buttonSide, buttonSide ); //Layout
-  ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter );
   //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
-  //triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
+  triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
   //
-  loopIX = loopIX + buttonReferentMeasure*1/2;
-  loopIY = loopIY + buttonReferentMeasure*1/2;
-  loopIWidthDiameter = buttonReferentMeasure;
-  loopIHeightDiameter = buttonReferentMeasure;
+  loopPlaylistX = loopIX + buttonReferentMeasure*1/2;
+  loopPlaylistY = loopIY + buttonReferentMeasure*1/2;
+  loopIWidthDiameter = buttonReferentMeasure*10/16;
+  loopIHeightDiameter = buttonReferentMeasure*10/16;
+  loopIX1 = loopPlaylistX + buttonReferentMeasure*1/16;
+  loopIY1 = loopIY + buttonReferentMeasure*10/16;
+  loopIX2 = loopIX + buttonReferentMeasure;
+  loopIY2 = loopIY + buttonReferentMeasure*10/16;
+  loopIX3 = loopPlaylistX + buttonReferentMeasure*1.1/4; 
+  loopIY3 = loopIY + buttonReferentMeasure*1.27/4;
   //
   //
   //Shuffle //left r2
