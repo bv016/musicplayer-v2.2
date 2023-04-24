@@ -56,7 +56,7 @@ void setup() {
   loopIX = pauseX2;
   loopIY = pauseY3 + ( buttonPositionRow * buttonReferentMeasure );
   //
-  shuffleX = (pauseX1 - pauseX1*0.0597);
+  shuffleX = (pauseX1 - pauseX1/(pauseWidth*(buttonReferentMeasure*4.9/100)));
   shuffleY = pauseY3 - ( buttonPositionRow*buttonReferentMeasure*-1 );
   //
   buttonPositionColumn = 1;
