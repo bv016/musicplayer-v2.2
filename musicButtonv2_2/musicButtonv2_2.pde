@@ -21,7 +21,7 @@ float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;//rewindtriangles2
 float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next
 float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth; //prev song riangle
 float siX1, siY1, siX2, siY2, siX3, siY3, siX4, siY4, soX1, soY1, soX2, soY2, soX3, soY3, soX4, soY4; //shuffle line thingys
-//float ;
+float stIX1, stIY1, stIX2, stIY2, stIX3, stIY3, stiX1, stiY1, stiX2, stiY2, stiX3, stiY3; //shuffle triangle
 //
 void setup() {
   //Display
@@ -121,7 +121,7 @@ void draw() {
   stopEY = stopY + buttonReferentMeasure*1/2; 
   //
   //Pause Button || center at 25/32 [only correct button]
-  //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
+  rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
   rect( pauseX1, pauseY1, pauseWidth, buttonSide ); //bar 1
   rect( pauseX2, pauseY2, pauseWidth, buttonSide ); //bar 2
   //
@@ -133,11 +133,11 @@ void draw() {
   playX2 = pauseX1 + buttonReferentMeasure;
   playY2 = pauseY3 + buttonReferentMeasure*1/2;
   playX3 = pauseX1;
-  playY3 = shuffleY;
+  playY3 = pauseY1 + buttonReferentMeasure;
   //
   //
   //Fast Forward in the Song || To the right of center button
-  //rect( ffX, ffY, buttonSide, buttonSide ); //Layout
+  rect( ffX, ffY, buttonSide, buttonSide ); //Layout
   triangle( ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A );
   triangle( ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B );
   ffX1A = ffX;
@@ -156,7 +156,7 @@ void draw() {
   //
   //
   //Rewind in the Song || to the left of center button
-  //rect( rrX, rrY, buttonSide, buttonSide ); //Layout
+  rect( rrX, rrY, buttonSide, buttonSide ); //Layout
   triangle( rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A );
   triangle( rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B );
   rrX1A = rrX + buttonReferentMeasure;
@@ -175,7 +175,7 @@ void draw() {
   //
   //
   //Next Button, skip file || to the right of ff within song
-  //rect( nextX, nextY, buttonSide, buttonSide ); //Layout
+  rect( nextX, nextY, buttonSide, buttonSide ); //Layout
   triangle( nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A );
   rect( nextXA, nextYA, nextWidth, buttonSide );
   nextX1A = nextX;
@@ -189,7 +189,7 @@ void draw() {
   nextWidth = buttonReferentMeasure*1/3;
   //
   //Previous Button || to the left of rewind
-  //rect( prevX, prevY, buttonSide, buttonSide ); //Layout
+  rect( prevX, prevY, buttonSide, buttonSide ); //Layout
   triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   rect( prevX, prevY, prevWidth, buttonSide );
   prevX1 = prevX + buttonReferentMeasure;
@@ -226,7 +226,8 @@ void draw() {
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
   rect( soX1, soY1, soX2, soY2, soX3, soY3, soX4, soY4 ); //outer
   rect( siX1, siY1, siX2, siY2, siX3, siY3, siX4, siY4 ); //inner
-  //triangle();
+  triangle( stIX1, stIY1, stIX2, stIY2, stIX3, stIY3 );// bottom triangle
+  triangle(stiX1, stiY1, stiX2, stiY2, stiX3, stiY3); //top triangle
   siX1 = shuffleX + buttonReferentMeasure*1/4; //outer
   siY1 = shuffleY + buttonReferentMeasure*3/8;
   siX2 = buttonReferentMeasure*2/4;
@@ -244,6 +245,20 @@ void draw() {
   soY3 = shuffleY + buttonReferentMeasure*1/2;
   soX4 = shuffleX + buttonReferentMeasure*1/2; //width
   soY4 = shuffleY + buttonReferentMeasure*1/2;
+  //
+  stIX1 = shuffleX + buttonReferentMeasure*3/8; //bottom triangle, top point
+  stIY1 = siY4 + buttonReferentMeasure*1/4;
+  stIX2 = shuffleX + buttonReferentMeasure*3/8;
+  stIY2 = shuffleY + buttonReferentMeasure*1/2;
+  stIX3 = shuffleX + buttonReferentMeasure*1.1/8;
+  stIY3 = loopIY1;
+  //
+  stiX1 = shuffleX + buttonReferentMeasure*5/8; //top point and triangle
+  stiY1 = shuffleY + buttonReferentMeasure*1/4;
+  stiX2 = shuffleX + buttonReferentMeasure*6.9/8;
+  stiY2 = siY1;
+  stiX3 = shuffleX + buttonReferentMeasure*5/8;
+  stiY3 = siY1 + buttonReferentMeasure*1/8;
   //
   //2-D Shapes
   //
