@@ -2,16 +2,17 @@
 //[X] move shuffle to the left of loop
 //[ ] add prejudice to shapes
 //[ ] add button space
-//[ ] 
+//[ ]
 //reminder to invert the left sides
 
 float buttonReferentMeasure;
 float buttonSide, spaceX, spaceY, spaceWidth, spaceHeight;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseX3, pauseY3, pauseWidth;
-float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, stopX, stopY, loopIX, loopIY;
+float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3, loopIX, loopIY;
+float stopX, stopY, stopX1, stopY1, stopX2, stopY2, stopX3, stopY3, stopX4, stopY4, stopEX, stopEY, stopEW, stopEH;
 float ffX, ffY, rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
-float loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter;
-float loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3;
+float loopPlaylistX, loopPlaylistY, loopWidthDiameter1, loopHeightDiameter1, loopWidthDiameter2, loopHeightDiameter2;
+float loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3, loopIXA, loopIYA;
 float shuffleX, shuffleY, shuffleX1, shuffleX2;//shuffle box
 float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A; //ff ttriangle1
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;//fftriangle2
@@ -102,16 +103,29 @@ void draw() {
   rect( spaceX, spaceY, spaceWidth, buttonSide );
   rect( spaceX, spaceY, spaceHeight, buttonSide );
   //
-  //Stop Button || far right, find way to move middle bottom
+  //Stop Button || middle bottom
   rect( stopX, stopY, buttonSide, buttonSide ); //layout?
-  rect( stopX, stopY, buttonSide, buttonSide ); //square
+  ellipse( stopEX, stopEY, stopEW, stopEH ); //outer circle
+  quad( stopX1, stopY1, stopX2, stopY2, stopX3, stopY3, stopX4, stopY4 ); //inner square
+  stopEW = buttonSide*11/16;
+  stopEH = buttonSide*11/16;
+  stopX1 = stopX + buttonSide*2/6; //square
+  stopY1 = stopY + buttonSide*2/6;
+  stopX2 = stopX + buttonSide*4/6;
+  stopY2 = stopY + buttonSide*2/6;
+  stopX3 = stopX + buttonSide*4/6;
+  stopY3 = stopY + buttonSide*4/6;
+  stopX4 = stopX + buttonSide*2/6;
+  stopY4 = stopY + buttonSide*4/6;
+  stopEX = stopX + buttonReferentMeasure*1/2; //circle
+  stopEY = stopY + buttonReferentMeasure*1/2; 
   //
   //Pause Button || center at 25/32 [only correct button]
   //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
-  rect( pauseX1, pauseY1, pauseWidth, buttonSide );
-  rect( pauseX2, pauseY2, pauseWidth, buttonSide );
+  rect( pauseX1, pauseY1, pauseWidth, buttonSide ); //bar 1
+  rect( pauseX2, pauseY2, pauseWidth, buttonSide ); //bar 2
   //
-  //Play Button || center at 25/32 [is the triangle bugging my screen and ugly top left creature]
+  //Play Button || center at 25/32 
   //rect( playX, playY, buttonSide, buttonSide ); //Layout
   triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
   playX1 = pauseX1;
@@ -188,32 +202,36 @@ void draw() {
   //
   //Loop songs | offest middle right
   rect( loopIX, loopIY, buttonSide, buttonSide ); //Layout
-  ellipse( loopPlaylistX, loopPlaylistY, loopIWidthDiameter, loopIHeightDiameter );
-  //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopPlaylistX, loopPlaylistY, loopWidthDiameter1, loopHeightDiameter1 );
+  ellipse( loopIXA, loopIYA, loopWidthDiameter2, loopHeightDiameter2 );
   triangle( loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3 );
   //
   loopPlaylistX = loopIX + buttonReferentMeasure*1/2;
   loopPlaylistY = loopIY + buttonReferentMeasure*1/2;
-  loopIWidthDiameter = buttonReferentMeasure*10/16;
-  loopIHeightDiameter = buttonReferentMeasure*10/16;
+  loopWidthDiameter1 = buttonReferentMeasure*11/16;
+  loopHeightDiameter1 = buttonReferentMeasure*11/16;
   loopIX1 = loopPlaylistX + buttonReferentMeasure*1/16;
   loopIY1 = loopIY + buttonReferentMeasure*10/16;
   loopIX2 = loopIX + buttonReferentMeasure;
   loopIY2 = loopIY + buttonReferentMeasure*10/16;
-  loopIX3 = loopPlaylistX + buttonReferentMeasure*1.1/4; 
+  loopIX3 = loopPlaylistX + buttonReferentMeasure*1.1/4;
   loopIY3 = loopIY + buttonReferentMeasure*1.27/4;
+  loopIXA = loopIX + buttonReferentMeasure*1/2;
+  loopIYA = loopIY + buttonReferentMeasure*1/2;
+  loopHeightDiameter2 = buttonReferentMeasure*8/16;
+  loopWidthDiameter2 = buttonReferentMeasure*8/16;
   //
   //
   //Shuffle //left r2
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
-/*  curve( crvXA, crvYA, buttonSide);
-  curve();
-  //
-    crvXA = shuffleX + buttonReferentMeasure*1/16;
-    crvYA;
-    crvXB;
-    crvYB;
-  *///
+  /*  curve( crvXA, crvYA, buttonSide);
+   curve();
+   //
+   crvXA = shuffleX + buttonReferentMeasure*1/16;
+   crvYA;
+   crvXB;
+   crvYB;
+   */  //
   //2-D Shapes
   //
 } //End draw
