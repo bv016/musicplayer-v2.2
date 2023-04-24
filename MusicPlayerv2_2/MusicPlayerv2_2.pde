@@ -44,7 +44,7 @@ void keyPressed() {
   println("KeyPressed:", sfx[0].length() );
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
-  if (key =='q') exit();
+  if (key =='q') exit(); //quits the program
   if (key == CODED && key==ESC) exit();
   sfx[0].play();
   println (sfx[0].position(), sfx[0].length() );

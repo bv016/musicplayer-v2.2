@@ -1,3 +1,4 @@
+//Loads music
 void loadMusic() {
   minim = new Minim(this);
   //

@@ -46,7 +46,7 @@ void quitButtons() {
 //
 void quitButtonCode() {
   sfx[0].loop(0);
-  delay(1000); //amount of time sound fx plays;
+  delay(1000); //amount of time sound fx plays in ms;
   exit();
 }
 
@@ -73,7 +73,7 @@ void playPause()
 {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
-  } else if ( songs[currentSong].position() >= songs[0].length()*90/100 ) {
+  } else if ( songs[currentSong].position() >= songs[0].length()*9/10 ) {
     songs[currentSong].rewind();
     songs[currentSong].play();
   } else {
