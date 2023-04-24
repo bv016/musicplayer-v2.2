@@ -20,7 +20,7 @@ float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;//rewindTRIAGLES1
 float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;//rewindtriangles2
 float nextX1A, nextY1A, nextX2A, nextY2A, nextX3A, nextY3A, nextXA, nextYA, nextWidth; //shapes for next
 float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth; //prev song riangle
-float csA, csB, ceA, ceB, crvXA, crvYA, crvXB, crvYB;
+float siX1, siY1, siX2, siY2, siX3, siY3, siX4, siY4, soX1, soY1, soX2, soY2, soX3, soY3, soX4, soY4; //shuffle line thingys
 //float ;
 //
 void setup() {
@@ -56,7 +56,7 @@ void setup() {
   loopIX = pauseX2;
   loopIY = pauseY3 + ( buttonPositionRow * buttonReferentMeasure );
   //
-  shuffleX = (pauseX1 - pauseX1*0.06);
+  shuffleX = (pauseX1 - pauseX1*0.0597);
   shuffleY = pauseY3 - ( buttonPositionRow*buttonReferentMeasure*-1 );
   //
   buttonPositionColumn = 1;
@@ -224,14 +224,27 @@ void draw() {
   //
   //Shuffle //left r2
   rect( shuffleX, shuffleY, buttonSide, buttonSide ); //Layout
-  /*  curve( crvXA, crvYA, buttonSide);
-   curve();
-   //
-   crvXA = shuffleX + buttonReferentMeasure*1/16;
-   crvYA;
-   crvXB;
-   crvYB;
-   */  //
+  rect( soX1, soY1, soX2, soY2, soX3, soY3, soX4, soY4 ); //outer
+  rect( siX1, siY1, siX2, siY2, siX3, siY3, siX4, siY4 ); //inner
+  //triangle();
+  siX1 = shuffleX + buttonReferentMeasure*1/4; //outer
+  siY1 = shuffleY + buttonReferentMeasure*3/8;
+  siX2 = buttonReferentMeasure*2/4;
+  siY2 = buttonReferentMeasure*2/8;
+  siX3 = shuffleX + buttonReferentMeasure*1/2; //height
+  siY3 = shuffleY + buttonReferentMeasure*1/2;
+  siX4 = shuffleX + buttonReferentMeasure*1/2; //width
+  siY4 = shuffleY + buttonReferentMeasure*1/2;
+  //
+  soX1 = shuffleX + buttonReferentMeasure*1/4; //inner
+  soY1 = shuffleY + buttonReferentMeasure*3/8;
+  soX2 = buttonReferentMeasure*2/4;
+  soY2 = buttonReferentMeasure*2/8;
+  soX3 = shuffleX + buttonReferentMeasure*1/2; //height
+  soY3 = shuffleY + buttonReferentMeasure*1/2;
+  soX4 = shuffleX + buttonReferentMeasure*1/2; //width
+  soY4 = shuffleY + buttonReferentMeasure*1/2;
+  //
   //2-D Shapes
   //
 } //End draw
