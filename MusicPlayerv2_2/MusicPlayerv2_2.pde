@@ -2,6 +2,8 @@
 //[ ] fix null value 8[] when 1 or 8 are used
 //[ ] stop amalgamation of songs from forming
 //[ ] stop the minim error 
+//if songs[currentSong] <= 0 = 8;
+// if songs[CurrentSong] >= 8 = 1;
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;
