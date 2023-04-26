@@ -27,6 +27,8 @@ Boolean activateWindow=false, autoPlayOn=false;
 void setup() {
   size(800, 500);
   loadMusic();
+  /*if ( songs[currentSong].length >= 98/100);
+  currentSong++;*/
   //song0.loop(0);
   //sfx[0].loop(0);
 }// End setup
