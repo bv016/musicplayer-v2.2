@@ -73,7 +73,7 @@ void playPause()
 {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
-  } else if ( songs[currentSong].position() >= songs[currentSong].length()*98/100 ) { 
+  } else if ( songs[currentSong].position() >= songs[currentSong].length()*98/100 ) {
     songs[currentSong].rewind();
     songs[currentSong].play();
     //autoplay>
@@ -107,22 +107,23 @@ void songSkip() {
     currentSong++;
   }
 }
-  //
-  void loopSong()
-  {
-    if ( songs[currentSong].position() >= songs[currentSong].length()*90/100 ) {
-    songs[currentSong].loop(); }
+//
+void loopSong()
+{
+  if ( songs[currentSong].position() >= songs[currentSong].length()*90/100 ) {
+    songs[currentSong].loop();
   }
-  //
-  void shuffleO() {
+}
+//
+void shuffleO() {
+}
+//
+void stopSong()
+{//stop is a fancy rewind
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+  } else {
+    songs[currentSong].rewind();
   }
-  //
-  void stopSong()
-  {//stop is a fancy rewind
-    if ( songs[currentSong].isPlaying() ) {
-      songs[currentSong].pause();
-      songs[currentSong].rewind();
-    } else {
-      songs[currentSong].rewind();
-    }
-  } //End stopSong
+} //End stopSong
