@@ -3,13 +3,11 @@
 When does the sound stop? Indicates delay | ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 8"  */
 //[ ] stop amalgamation of songs from forming
 //[ ] stop the minim error 
-<<<<<<< Updated upstream
 // if songs[currentSong] <= 0 = 8;
 // if songs[CurrentSong] >= 8 = 1;
-
-=======
 //[ ] make if song >= 8, become song0 | and vice versa
->>>>>>> Stashed changes
+
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
