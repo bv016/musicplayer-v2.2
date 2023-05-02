@@ -7,7 +7,6 @@ When does the sound stop? Indicates delay | ArrayIndexOutOfBoundsException: Inde
 // if songs[CurrentSong] >= 8 = 1;
 //[ ] make if song >= 8, become song0 | and vice versa
 
-
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -27,6 +26,13 @@ int currentSong = int ( random( numberOfSongs-1 ) ); //shuffle || random same th
 //
 Boolean activateWindow=false, autoPlayOn=false;
 //
+/*if ( autoplayOn==false ) {
+  autoPlayOn==true;
+} else {
+autoPlayOn==false;
+}*/
+//
+//
 void setup() {
   size(800, 500);
   loadMusic();
@@ -45,10 +51,10 @@ void draw() {
 //
 void keyPressed() {
   //
-  sfx[0].play();
-  sfx[0].rewind();
+  sfx[1].play();
+  sfx[1].rewind();
   delay(1000);//name time when sound stops
-  println("KeyPressed:", sfx[0].length() );
+  println("KeyPressed:", sfx[1].length() );
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
   if (key =='q') exit(); //quits the program
