@@ -88,25 +88,32 @@ void rewind() {
 }
 //
 void prevSong() {
-  currentSong--;
-}    //
-void ff() {
-  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-}//end ff | fast forward
+//ERROR: ArrayListOutOfBounds
+  //ERROR: currentSong++; plays two songs or more at once
+  if ( songs[currentSong].isPlaying() ) {
+  } else if (currentSong >= songs.length-1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+    currentSong--;
+  }
+}//End Next Song
 //
 void songSkip() {
-  currentSong++;
-  if (songs[currentSong].isPlaying() ) {
+//ERROR: ArrayListOutOfBounds
+  //ERROR: currentSong++; plays two songs or more at once
+  if ( songs[currentSong].isPlaying() ) {
+    //Students to finish
     //Current Song: .pause(), .rewind()
-    //Next song: current song++
-    // .play()
-  } else if (currentSong >= songs.length-1) {
+    //Next Song: currentSong++
+    //Now: DELAY-1-Second, .play()
+  } else if (currentSong >= songs.length-1 ) {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
     currentSong++;
   }
-}
+}//End Next Song
 //
 void loopSong()
 {
@@ -116,14 +123,30 @@ void loopSong()
 }
 //
 void shuffleO() {
-}
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    randomCurrentSong(); //See VOID Below
+    songs[currentSong].play();
+  } else {
+    songs[currentSong].rewind();
+    currentSong = int ( random( numberOfSongs-1 ) ); //Starts playlist from random song
+    songs[currentSong].play();
+  }
+} //End Shuffle Play List
 //
+void randomCurrentSong() {
+  currentSong = int ( random( numberOfSongs-1 ) ); //Starts playlist from random song
+} //End Random Current Song
 void stopSong()
-{//stop is a fancy rewind
+{
+  //Based on a question: is the song playing
+  //Hint: would this fix the ERROR of the MUTE Button
+  //Note: STOP is actually afancy rewind, no ERRORS
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
   } else {
     songs[currentSong].rewind();
   }
-} //End stopSong
+}//End Stop Song
