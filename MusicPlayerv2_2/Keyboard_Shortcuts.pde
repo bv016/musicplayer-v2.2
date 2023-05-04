@@ -86,6 +86,10 @@ void playPause()
 void rewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
 }
+void ff() {
+  if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+}
+//
 //
 void prevSong() {
 //ERROR: ArrayListOutOfBounds
