@@ -16,26 +16,26 @@ void musicShortcuts() {
   if (key == '7') songs[6].loop(0); // clouds
   if (key == '8') songs[7].loop(0); // like you
   //
-  if (key == 'P' || key == 'p');
+if (key == 'P' || key == 'p');
   autoPlay(); //when song ends, there is no need to click on new one
-  if (key == 'G' || key == 'g');
+if (key == 'G' || key == 'g');
   playPause(); //pause and play
-  if (key == 'F' || key == 'f');
-  rewind(); //rewind to beginning
+if (key == 'F' || key == 'f');
+rewind(); //rewind to beginning
   if (key == 'D' || key == 'd');
-  prevSong(); //play previous song
+prevSong(); //play previous song
   if (key == 'H' || key == 'h');
-  ff(); //fast forward in song
+ff(); //fast forward in song
   if (key == 'J' || key == 'j');
-  nextSong(); //skips to next song
+nextSong(); //skips to next song
   if (key == 'K' || key == 'k');
-  loopSong(); //loops songs, and playlist in same button
+loopSong(); //loops songs, and playlist in same button
   if (key == 'D' || key == 'd');
-  shuffleO(); //letter o, not 0
+shuffleO(); //letter o, not 0
   if (key == 'S' || key == 's');
-  stopSong(); //stops song
+stopSong(); //stops song
   if (key == 'R' || key 'r');
-  randomCurrentSong(); //gamble on your next song
+randomCurrentSong(); //gamble on your next song
   //
 }//end musicShortcuts
 //
