@@ -108,10 +108,10 @@ void prevSong() {
   //ERROR: ArrayListOutOfBounds
   //ERROR: currentSong++; plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
-    //Students to finish
-    //Current Song: .pause(), .rewind()
-    //Next Song: currentSong++
-    //Now: DELAY-1-Second, .play()
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    currentSong++;
+    delay(999);
   } else if (currentSong >= songs.length-1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
@@ -132,7 +132,7 @@ void loopSong() {
   }
 }//End Next Song
 //
-void shuffleO() {
+void shuffleO() { //letter O, not a zero
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
@@ -143,7 +143,7 @@ void shuffleO() {
     currentSong = int ( random( numberOfSongs-1 ) ); //Starts playlist from random song
     songs[currentSong].play();
   }
-} //End Shuffle Play List
+} //End Shuffle Playlist
 //
 void randomCurrentSong() {
   currentSong = int ( random( numberOfSongs-1 ) ); //Starts playlist from random song
