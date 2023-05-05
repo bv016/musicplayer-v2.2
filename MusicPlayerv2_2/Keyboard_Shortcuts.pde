@@ -34,6 +34,9 @@ void musicShortcuts() {
   shuffleO(); //letter o, not 0
   if (key == 'S' || key == 's');
   stopSong(); //stops song
+  if (key == 'R' || key 'r');
+  randomCurrentSong(); //gamble on your next song
+  //
 }//end musicShortcuts
 //
 //End Keyboard Shortcuts
@@ -151,12 +154,12 @@ void randomCurrentSong() {
 void stopSong()
 {
   //Based on a question: is the song playing
-  //Hint: would this fix the ERROR of the MUTE Button
   //Note: STOP is actually afancy rewind, no ERRORS
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
   } else {
     songs[currentSong].rewind();
+    songs[currentSong].pause();
   }
 }//End Stop Song
