@@ -1,8 +1,8 @@
 //[X] get soundEffectPathway to work and songs to get used
 /*[ ] fix null value 8[] when 1 or 8 are used
-When does the sound stop? Indicates delay | ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 8"  */
+ When does the sound stop? Indicates delay | ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 8"  */
 //[ ] stop amalgamation of songs from forming
-//[ ] stop the minim error 
+//[ ] stop the minim error
 // if songs[currentSong] <= 0 = 8;
 // if songs[CurrentSong] >= 8 = 1;
 //[ ] make if song >= 8, become song0 | and vice versa
@@ -27,17 +27,17 @@ int currentSong = int ( random( numberOfSongs-1 ) ); //shuffle || random same th
 Boolean activateWindow=false, autoPlayOn=false;
 //
 /*if ( autoplayOn==false ) {
-  autoPlayOn==true;
-} else {
-autoPlayOn==false;
-}*/
+ autoPlayOn==true;
+ } else {
+ autoPlayOn==false;
+ }*/
 //
 //
 void setup() {
   size(800, 500);
   loadMusic();
   /*if ( songs[currentSong].length >= 98/100);
-  currentSong++;*/
+   currentSong++;*/
   //song0.loop(0);
   //sfx[0].loop(0);
 }// End setup

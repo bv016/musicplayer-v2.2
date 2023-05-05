@@ -27,7 +27,7 @@ void musicShortcuts() {
   if (key == 'H' || key == 'h');
   ff(); //fast forward in song
   if (key == 'J' || key == 'j');
-  songSkip(); //skips to next song
+  nextSong(); //skips to next song
   if (key == 'K' || key == 'k');
   loopSong(); //loops songs, and playlist in same button
   if (key == 'D' || key == 'd');
@@ -92,8 +92,8 @@ void ff() {
 //
 //
 void prevSong() {
-//ERROR: ArrayListOutOfBounds
-  //ERROR: currentSong++; plays two songs or more at once
+  //ERROR: ArrayListOutOfBounds
+  //ERROR: currentSong--; plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
   } else if (currentSong >= songs.length-1 ) {
     currentSong = 0;
@@ -101,17 +101,18 @@ void prevSong() {
     songs[currentSong].rewind();
     currentSong--;
   }
-}//End Next Song
+}//End prevSong
 //
-void songSkip() {
-//ERROR: ArrayListOutOfBounds
+//
+  void nextSong() {
+  //ERROR: ArrayListOutOfBounds
   //ERROR: currentSong++; plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
     //Students to finish
     //Current Song: .pause(), .rewind()
     //Next Song: currentSong++
     //Now: DELAY-1-Second, .play()
-  } else if (currentSong >= songs.length-1 ) {
+  } else if (currentSong >= songs.length-1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
@@ -119,12 +120,17 @@ void songSkip() {
   }
 }//End Next Song
 //
-void loopSong()
-{
-  if ( songs[currentSong].position() >= songs[currentSong].length()*90/100 ) {
-    songs[currentSong].loop();
+//
+void loopSong() {
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+  } else if (currentSong >= songs.length-1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
   }
-}
+}//End Next Song
 //
 void shuffleO() {
   if ( songs[currentSong].isPlaying() ) {
