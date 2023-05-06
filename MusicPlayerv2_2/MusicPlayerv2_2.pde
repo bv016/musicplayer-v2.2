@@ -5,7 +5,7 @@
 //[ ] stop the minim error
 // if songs[currentSong] <= 0 = 8;
 // if songs[CurrentSong] >= 8 = 1;
-//[ ] make if song >= 8, become song0 | and vice versa
+//[o] make if song >= 8, become song0 | and vice versa
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;

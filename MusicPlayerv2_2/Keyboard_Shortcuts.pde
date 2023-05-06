@@ -16,27 +16,27 @@ void musicShortcuts() {
   if (key == '7') songs[6].loop(0); // clouds
   if (key == '8') songs[7].loop(0); // like you
   //
-if (key == 'P' || key == 'p');
+  if (key == 'P' || key == 'p');
   autoPlay(); //when song ends, there is no need to click on new one
-if (key == 'G' || key == 'g');
+  if (key == 'G' || key == 'g');
   playPause(); //pause and play
-if (key == 'F' || key == 'f');
-rewind(); //rewind to beginning
+  if (key == 'F' || key == 'f');
+  rewind(); //rewind to beginning
   if (key == 'D' || key == 'd');
-prevSong(); //play previous song
+  prevSong(); //play previous song
   if (key == 'H' || key == 'h');
-ff(); //fast forward in song
+  ff(); //fast forward in song
   if (key == 'J' || key == 'j');
-nextSong(); //skips to next song
+  nextSong(); //skips to next song
   if (key == 'K' || key == 'k');
-loopSong(); //loops songs, and playlist in same button
+  loopSong(); //loops songs, and playlist in same button
   if (key == 'D' || key == 'd');
-shuffleO(); //letter o, not 0
+  shuffleO(); //letter o, not 0
   if (key == 'S' || key == 's');
-stopSong(); //stops song
-  if (key == 'R' || key 'r');
-randomCurrentSong(); //gamble on your next song
-  //
+  stopSong(); //stops song
+  /*if (key == 'R' || key 'r');
+  randomCurrentSong(); //gamble on your next song
+   */
 }//end musicShortcuts
 //
 //End Keyboard Shortcuts
@@ -107,7 +107,7 @@ void prevSong() {
 }//End prevSong
 //
 //
-  void nextSong() {
+void nextSong() {
   //ERROR: ArrayListOutOfBounds
   //ERROR: currentSong++; plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
@@ -115,14 +115,13 @@ void prevSong() {
     songs[currentSong].rewind();
     currentSong++;
     delay(999);
-  } else if (currentSong >= songs.length-1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+  } else if (currentSong > songs.length+8 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
     currentSong++;
   }
 }//End Next Song
-//
 //
 void loopSong() {
   if ( songs[currentSong].isPlaying() ) {
@@ -160,6 +159,5 @@ void stopSong()
     songs[currentSong].rewind();
   } else {
     songs[currentSong].rewind();
-    songs[currentSong].pause();
   }
 }//End Stop Song
