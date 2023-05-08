@@ -35,7 +35,7 @@ void musicShortcuts() {
   if (key == 'S' || key == 's');
   stopSong(); //stops song
   /*if (key == 'R' || key 'r');
-  randomCurrentSong(); //gamble on your next song
+   randomCurrentSong(); //gamble on your next song
    */
 }//end musicShortcuts
 //
@@ -89,7 +89,7 @@ void playPause()
 void rewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
 }
-void ff() {
+void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
 }
 //
@@ -98,7 +98,11 @@ void prevSong() {
   //ERROR: ArrayListOutOfBounds
   //ERROR: currentSong--; plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
-  } else if (currentSong >= songs.length-1 ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    currentSong--;
+    delay(999);
+  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
@@ -115,7 +119,7 @@ void nextSong() {
     songs[currentSong].rewind();
     currentSong++;
     delay(999);
-  } else if (currentSong > songs.length+8 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
@@ -127,7 +131,7 @@ void loopSong() {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
-  } else if (currentSong >= songs.length-1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
