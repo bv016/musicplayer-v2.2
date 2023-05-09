@@ -1,11 +1,11 @@
-//[X] get soundEffectPathway to work and songs to get used
-/*[ ] fix null value 8[] when 1 or 8 are used
- When does the sound stop? Indicates delay | ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 8"  */
-//[ ] stop amalgamation of songs from forming
-//[ ] stop the minim error
-// if songs[currentSong] <= 0 = 8;
+// [X] get soundEffectPathway to work and songs to get used
+// [ ] fix null value 8[] when 1 or 8 are used
+// [X] stop amalgamation of songs from forming
+// [ ] stop the minim error
 // if songs[CurrentSong] >= 8 = 1;
-//[o] make if song >= 8, become song0 | and vice versa
+// [X] make if song >= 8, become song0 | and vice versa
+// [ ] get next and prev song to stop current song and play
+// [ ] get pause to continiue off of the same song
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;

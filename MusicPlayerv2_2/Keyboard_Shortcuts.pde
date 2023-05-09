@@ -82,7 +82,7 @@ void playPause()
     //autoplay>
   } else {
     //autoPlay(), is better here
-    songs[currentSong].play();
+    songs[currentSong].pause();
   }
 }
 //
