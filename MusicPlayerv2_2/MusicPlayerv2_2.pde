@@ -2,10 +2,9 @@
 // [ ] fix null value 8[] when 1 or 8 are used
 // [X] stop amalgamation of songs from forming
 // [ ] stop the minim error
-// if songs[CurrentSong] >= 8 = 1;
-// [X] make if song >= 8, become song0 | and vice versa
 // [ ] get next and prev song to stop current song and play
 // [ ] get pause to continiue off of the same song
+// [ ] make the buttons do their fudfjkghd job
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;

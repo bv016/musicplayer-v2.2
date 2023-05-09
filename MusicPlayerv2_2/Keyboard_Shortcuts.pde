@@ -3,19 +3,6 @@ void keyPressedShortcuts() {
   musicShortcuts();
   quitButtons();
   //
-}//End keyPressedShortcuts
-//
-void musicShortcuts() {
-  //
-  if (key == '1') songs[0].loop(0); // full of you
-  if (key == '2') songs[1].loop(0); // omoikiri
-  if (key == '3') songs[2].loop(0); // (d)halfmoon
-  if (key == '4') songs[3].loop(0); // steal this night
-  if (key == '5') songs[4].loop(0); // pathetic
-  if (key == '6') songs[5].loop(0); // last train
-  if (key == '7') songs[6].loop(0); // clouds
-  if (key == '8') songs[7].loop(0); // like you
-  //
   if (key == 'P' || key == 'p');
   autoPlay(); //when song ends, there is no need to click on new one
   if (key == 'G' || key == 'g');
@@ -37,15 +24,27 @@ void musicShortcuts() {
   /*if (key == 'R' || key 'r');
    randomCurrentSong(); //gamble on your next song
    */
+}//End keyPressedShortcuts
+//
+void musicShortcuts() {
+  //
+  if (key == '1') songs[0].loop(0); // full of you
+  if (key == '2') songs[1].loop(0); // omoikiri
+  if (key == '3') songs[2].loop(0); // (d)halfmoon
+  if (key == '4') songs[3].loop(0); // steal this night
+  if (key == '5') songs[4].loop(0); // pathetic
+  if (key == '6') songs[5].loop(0); // last train
+  if (key == '7') songs[6].loop(0); // clouds
+  if (key == '8') songs[7].loop(0); // like you
+  //
 }//end musicShortcuts
 //
-//End Keyboard Shortcuts
 void quitButtons() {
   //Quit button keyboard shortcuts
   if (key == CODED && keyCode == ESC ) {
     quitButtonCode();
   }
-}
+}//end keyboard shortcuts
 //
 void quitButtonCode() {
   sfx[0].loop(0);
@@ -83,14 +82,27 @@ void playPause()
   } else {
     //autoPlay(), is better here
     songs[currentSong].pause();
+    songs[currentSong].loop();
   }
 }
 //
 void rewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
+  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+    currentSong--;
+  }
 }
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+    currentSong--;
+  }
 }
 //
 //
