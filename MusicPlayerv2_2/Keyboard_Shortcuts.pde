@@ -65,7 +65,7 @@ void autoPlay() {
 void autoPlayMusic() {
   //Error: ArrayListOutOfBounds
   if ( songs[currentSong].isPlaying()==false ) {
-    currentSong++;
+    //currentSong++;
     songs[currentSong].play();
   }
 }//end autoPlayMusic
@@ -97,12 +97,11 @@ void rewind() {
 }
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-  /*else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
     currentSong = 0;
   } else {
-    songs[currentSong].rewind();
-    currentSong--;
-  }*/
+    songs[currentSong].skip(5000);
+  }
 }
 //
 //
@@ -117,6 +116,7 @@ void prevSong() {
   } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
     currentSong = 0;
   } else {
+    songs[currentSong].pause();
     songs[currentSong].rewind();
     currentSong--;
   }
@@ -134,6 +134,7 @@ void nextSong() {
   } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
+    songs[currentSong].pause();
     songs[currentSong].rewind();
     currentSong++;
   }
