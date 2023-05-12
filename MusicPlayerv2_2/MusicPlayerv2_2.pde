@@ -1,10 +1,11 @@
-// [X] get soundEffectPathway to work and songs to get used
-// [ ] fix null value 8[] when 1 or 8 are used
-// [X] stop amalgamation of songs from forming
-// [ ] stop the minim error
-// [ ] get next and prev song to stop current song and play
-// [ ] get pause to continiue off of the same song
-// [ ] make the buttons do their fudfjkghd job
+/* [X] get soundEffectPathway to work and songs to get used
+   [ ] fix null value 8[] when 1 or 8 are used
+   [X] stop amalgamation of songs from forming
+   [ ] get next and prev song to stop current song and play
+   [ ] get pause to continiue off of the same song
+   [ ] make the buttons do their fudfjkghd job
+   [ ] get esc to quit and not nullpointerexception 
+*/
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;

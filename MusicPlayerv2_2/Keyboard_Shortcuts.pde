@@ -89,7 +89,7 @@ void playPause()
 //
 void rewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
-  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+  else if (currentSong >= songs.length-1  /* || currentSong >= songs.length+1 */ ) {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
@@ -98,7 +98,7 @@ void rewind() {
 }
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+  else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
     currentSong = 0;
   } else {
     songs[currentSong].skip(5000);
@@ -114,7 +114,7 @@ void prevSong() {
     songs[currentSong].rewind();
     currentSong--;
     delay(999);
-  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+  } else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
     currentSong = 0;
   } else {
     songs[currentSong].pause();
@@ -132,7 +132,7 @@ void nextSong() {
     songs[currentSong].rewind();
     currentSong++;
     delay(999);
-  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+  } else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].pause();
@@ -145,7 +145,7 @@ void loopSong() {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
-  } else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
+  } else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
@@ -171,7 +171,7 @@ void randomCurrentSong() {
 void stopSong()
 {
   //Based on a question: is the song playing
-  //Note: STOP is actually afancy rewind, no ERRORS
+  //Note: STOP is actually a fancy rewind, no ERRORS
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
