@@ -5,6 +5,8 @@
    [ ] get pause to continiue off of the same song
    [ ] make the buttons do their fudfjkghd job
    [ ] get esc to quit and not nullpointerexception 
+   
+   note: all keys think they are all the same
 */
 
 import ddf.minim.*;
