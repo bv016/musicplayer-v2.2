@@ -43,13 +43,14 @@ void quitButtons() {
   //Quit button keyboard shortcuts
   if (key == CODED && keyCode == ESC ) {
     quitButtonCode();
+    exit();
   }
 }//end keyboard shortcuts
 //
 void quitButtonCode() {
   sfx[0].loop(0);
-  delay(1000); //amount of time sound fx plays in ms;
-  exit();
+  delay(500); // amount of time sound fx plays in ms;
+  System.exit(0);
 }
 
 void autoPlay() {
@@ -65,7 +66,7 @@ void autoPlay() {
 void autoPlayMusic() {
   //Error: ArrayListOutOfBounds
   if ( songs[currentSong].isPlaying()==false ) {
-    //currentSong++;
+    currentSong++;
     songs[currentSong].play();
   }
 }//end autoPlayMusic
@@ -88,12 +89,12 @@ void playPause()
 //
 void rewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
-  /*else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
+  else if (currentSong >= songs.length-1 || currentSong >= songs.length+1 ) {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
     currentSong--;
-  }*/
+  }
 }
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
