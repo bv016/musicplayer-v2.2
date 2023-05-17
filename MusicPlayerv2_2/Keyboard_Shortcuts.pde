@@ -50,7 +50,7 @@ void quitButtons() {
 void quitButtonCode() {
   sfx[0].loop(0);
   delay(500); // amount of time sound fx plays in ms;
-  System.exit(0);
+  exit();
 }
 
 void autoPlay() {
