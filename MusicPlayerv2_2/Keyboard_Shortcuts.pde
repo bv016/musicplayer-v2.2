@@ -93,7 +93,7 @@ void rewind() {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
-    currentSong--;
+    songs[currentSong].loop();
   }
 }
 void ff() { //fast forward
@@ -102,6 +102,7 @@ void ff() { //fast forward
     currentSong = 0;
   } else {
     songs[currentSong].skip(5000);
+    songs[currentSong].loop();
   }
 }
 //
