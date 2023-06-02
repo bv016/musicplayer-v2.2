@@ -68,8 +68,6 @@ void autoPlayMusic() {
   if ( songs[currentSong].isPlaying()==false ) {
     currentSong++;
     songs[currentSong].play();
-  } else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) { //THIS LINE AND THE NEXT IS THE ALGORITHM
-    currentSong = 0;
   }
 }//end autoPlayMusic
 //
