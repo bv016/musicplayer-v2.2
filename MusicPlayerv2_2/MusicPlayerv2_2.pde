@@ -1,4 +1,4 @@
-     /* [X] get soundEffectPathway to work and songs to get used
+/* [X] get soundEffectPathway to work and songs to get used
    [ ] fix null value 8[] when 1 or 8 are used
    [X] stop amalgamation of songs from forming
    [ ] get next and prev song to stop current song and play
