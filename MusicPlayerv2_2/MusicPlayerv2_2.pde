@@ -48,7 +48,7 @@ void draw() {
   println(autoPlayOn, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length() );
   //
   if ( autoPlayOn==true ) autoPlayMusic();
-  else if ( autoPlayOn==true ) currentSong = int ( random( numberOfSongs-1 ) );
+  //else if ( autoPlayOn==true ) currentSong = int ( random( numberOfSongs-1 ) );
 } //End Draw
 //
 void keyPressed() {

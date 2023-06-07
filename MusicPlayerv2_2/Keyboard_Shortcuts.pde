@@ -41,7 +41,7 @@ void musicShortcuts() {
 //
 void quitButtons() {
   //Quit button keyboard shortcuts
-  if (key == CODED && keyCode == ESC ) {
+  if (key == CODED && keyCode == ESC) {
     quitButtonCode();
     exit();
   }
