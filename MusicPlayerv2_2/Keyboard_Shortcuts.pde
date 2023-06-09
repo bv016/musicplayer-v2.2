@@ -91,7 +91,7 @@ void playPause()
 //
 void rewind() { //d
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-5000);
-  else if (currentSong >= songs.length-1  /* || currentSong >= songs.length+1 */ ) {
+  else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
     currentSong = 0;
   } else {
     songs[currentSong].rewind();
