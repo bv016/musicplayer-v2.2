@@ -41,10 +41,12 @@ void musicShortcuts() {
 //
 void quitButtons() {
   //Quit button keyboard shortcuts
-  if (key == CODED && keyCode == ESC) {
-    quitButtonCode();
-    exit();
+  if (key =='q' || key == 'Q' ) {
+   quitButtonCode(); 
   }
+  if (key == CODED && key==ESC){
+  quitButtonCode();
+} 
 }//end keyboard shortcuts
 //
 void quitButtonCode() {
@@ -98,11 +100,11 @@ void rewind() { //d
 }
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
-  else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
-    currentSong = 0;
+  else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1  ) {
+    currentSong = 0; 
   } else {
-    songs[currentSong].skip(5000);
-    songs[currentSong].loop();
+    if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
+    //songs[currentSong].loop();
   }
 }
 //

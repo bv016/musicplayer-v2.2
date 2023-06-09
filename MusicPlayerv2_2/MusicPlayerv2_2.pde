@@ -4,10 +4,9 @@
    [ ] get next and prev song to stop current song and play
    [ ] get pause to continiue off of the same song
    [ ] make the buttons do their fudfjkghd job
-   [ ] get esc to quit and not nullpointerexception 
+   [X] get esc to quit and not nullpointerexception 
    note: all keys think they are all the same
 */
-
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -59,10 +58,6 @@ void keyPressed() {
   println("KeyPressed:", sfx[1].length() );
   println("When does the sound stop? Indicates delay");
   keyPressedShortcuts();
-  if (key =='q') exit(); //quits the program
-  if (key == CODED && key==ESC) exit();
-  sfx[0].play();
-  println (sfx[0].position(), sfx[0].length() );
 } //End keypPressed
 //
 void mousePressed() {
