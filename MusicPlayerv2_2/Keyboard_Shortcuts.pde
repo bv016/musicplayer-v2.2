@@ -18,9 +18,9 @@ void keyPressedShortcuts() {
   if (key == 'K' || key == 'k');
   loopSong(); //loops songs, and playlist in same button ^
   if (key == 'D' || key == 'd');
-  shuffleO(); //letter o, not 0 ^ 
+  shuffleO(); //letter o, not 0 ^
   if (key == 'S' || key == 's');
-  stopSong(); //stops song ^ 
+  stopSong(); //stops song ^
   /*if (key == 'R' || key 'r');
    randomCurrentSong(); //gamble on your next song
    */
@@ -42,11 +42,11 @@ void musicShortcuts() {
 void quitButtons() {
   //Quit button keyboard shortcuts
   if (key =='q' || key == 'Q' ) {
-   quitButtonCode(); 
+    quitButtonCode();
   }
-  if (key == CODED && key==ESC){
-  quitButtonCode();
-} 
+  if (key == CODED && key==ESC) {
+    quitButtonCode();
+  }
 }//end keyboard shortcuts
 //
 void quitButtonCode() {
@@ -70,11 +70,18 @@ void autoPlayMusic() {
   if ( songs[currentSong].isPlaying()==false ) {
     currentSong++;
     songs[currentSong].play();
+  } else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
+    currentSong = 0;
+  } else {
+    if ( songs[currentSong].isPlaying()==false ) {
+      currentSong++;
+      songs[currentSong].play();
+    }//end autoPlayMusic
   }
-}//end autoPlayMusic
+} 
+
 //
-//
-void playPause() 
+void playPause()
 {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
@@ -101,7 +108,7 @@ void rewind() { //d
 void ff() { //fast forward
   if (songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
   else if (currentSong >= songs.length-1 /* || currentSong >= songs.length+1 */ ) {
-    currentSong = 0; 
+    currentSong = 0;
   } else {
     if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(5000);
     //songs[currentSong].loop();

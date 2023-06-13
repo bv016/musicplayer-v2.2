@@ -47,12 +47,12 @@ void draw() {
   println(autoPlayOn, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length() );
   //
   if ( autoPlayOn==true ) autoPlayMusic();
-  //else if ( autoPlayOn==true ) currentSong = int ( random( numberOfSongs-1 ) );
+  else if ( autoPlayOn==true ) currentSong = int ( random( numberOfSongs-1 ) );
 } //End Draw
 //
 void keyPressed() {
   //
-  sfx[1].play();
+  sfx[1].loop();
   sfx[1].rewind();
   delay(1000);//name time when sound stops
   println("KeyPressed:", sfx[1].length() );
